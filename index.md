@@ -1,4 +1,5 @@
 ---
+title: Disarm Humanity
 layout: default
 ---
 Imagining the world before guns and a future without them.
