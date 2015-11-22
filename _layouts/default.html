@@ -2,18 +2,12 @@
 <html>
 <head>
 <title>{{ page.title }}</title>
-<style>
-  img {
-    height: 100px;
-    float: left;
-  }
-  </style>
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 </head>
 <body>
 
 {{ content }}
-<div id="images"></div>
+<div id="article"></div>
  
  
 <script>
@@ -22,10 +16,7 @@
   $.getJSON( redditAPI )
     .done(function( data ) {
       $.each( data.data.children, function( i, item ) {
-        $( "<img>" ).attr( "src", item.data.preview.images.source.url ).appendTo( "#images" );
-        if ( i === 3 ) {
-          return false;
-        }
+        $( "<img>" ).attr( "src", item.data.preview.images[0].source.url ).appendTo( "#article" );
       });
     });
 })();
