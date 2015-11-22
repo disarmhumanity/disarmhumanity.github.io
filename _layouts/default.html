@@ -18,7 +18,7 @@
     .done(function( data ) {
       $.each( data.data.children, function( i, item ) {
        if (item.data.preview) {
-        $( "<img>" ).attr( "src", item.data.preview.images[0].source.url ).attr( "height", 300 ).appendTo( "#article" );
+        $( "<div><img src=" + item.data.preview.images[0].source.url +"height=300"></div>").appendTo( "body" );
        }
       });
     });
