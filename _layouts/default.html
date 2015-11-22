@@ -19,7 +19,7 @@
 $.getJSON( "https://www.reddit.com/r/guncontrol.json", function( data ) {
   var items = [];
   $.each( data.data.children, function( key, val ) {
-    items.push( "<li id='" + key + "'>" + val + "</li>" );
+    items.push( "<li id='" + key + "'>" + JSON.stringify(val) + "</li>" );
   });
  
   $( "<ul/>", {
