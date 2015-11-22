@@ -17,7 +17,7 @@
  
 <script>
 (function() {
-  var redditAPI = "https://www.reddit.com/r/guncontrol.json";
+  var redditAPI = "https://www.reddit.com/search.json?q=subreddit%3Aguncontrol+self%3Ano&restrict_sr=&sort=new&t=all";
   $.getJSON( redditAPI )
     .done(function( data ) {
       $.each( data.data.children, function( i, item ) {
