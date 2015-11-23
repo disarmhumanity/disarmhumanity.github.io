@@ -12,24 +12,9 @@
 <div class="container">
   <div class="jumbotron">
     <h1>Disarm Humanity</h1>
-    <p>Imagining the world before gunas and a future without them.</p> 
+    <p>Imagining the world before guns and a future without them.</p> 
   </div>
   <div class="row" id="articles">
-    <div class="col-sm-4">
-      <h3>Column 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 3</h3> 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
   </div>
 </div>
 
@@ -41,9 +26,9 @@
   var redditAPI = "https://www.reddit.com/search.json?q=subreddit%3Aguncontrol+self%3Ano&restrict_sr=&sort=new&t=all";
   $.getJSON( redditAPI )
     .done(function( data ) {
-      $( "div" ).each( data.data.children, function( i, item ) {
+      $.each( data.data.children, function( i, item ) {
        if (item.data.preview) {
-        $( '<div><img src="' + item.data.preview.images[0].source.url + '" height=300>' + item.data.title + '</div>').appendTo( "articles" );
+        $( '<div class="col-sm-4"><img src="' + item.data.preview.images[0].source.url + '" height=300>' + item.data.title + '</div>').appendTo( "articles" );
        }
       });
     });
