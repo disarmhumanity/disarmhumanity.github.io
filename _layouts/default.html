@@ -9,7 +9,7 @@
 <body>
 
 
-<div class="container-fluid">
+<div class="container">
   <div class="jumbotron">
     <h1>Disarm Humanity</h1>
     <p>Imagining the world before guns and a future without them.</p> 
@@ -24,7 +24,7 @@
     .done(function( data ) {
       $.each( data.data.children, function( i, item ) {
        if (item.data.thumbnail) {
-        $( '<div class="container-fluid"><img src="' + item.data.thumbnail + '">' + item.data.title + '</div>').appendTo( "body" );
+        $( '<div class="container"><img src="' + item.data.thumbnail + '">' + item.data.title + '</div>').appendTo( "body" );
        }
       });
     });
