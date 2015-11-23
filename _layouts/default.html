@@ -26,7 +26,7 @@
     .done(function( data ) {
       $.each( data.data.children, function( i, item ) {
        if (item.data.preview) {
-        $( '<div class="col-sm-4"><img src="' + item.data.preview.images[0].source.url + '" height=300>' + item.data.title + '</div>').appendTo( "#articles" );
+        $( '<div class="col-sm-4"><img src="' + item.data.thumbnail + '">' + item.data.title + '</div>').appendTo( "#articles" );
        }
       });
     });
