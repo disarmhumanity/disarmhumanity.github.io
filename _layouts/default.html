@@ -25,7 +25,7 @@
   $.getJSON( redditAPI )
     .done(function( data ) {
       $.each( data.data.children, function( i, item ) {
-       if (item.data.preview) {
+       if (item.data.thumbnail) {
         $( '<div class="col-sm-4"><img src="' + item.data.thumbnail + '">' + item.data.title + '</div>').appendTo( "#articles" );
        }
       });
