@@ -17,13 +17,11 @@
   <div class="row" id="articles">
   </div>
 </div>
-
-<div id="article"></div>
  
  
 <script>
 (function() {
-  var redditAPI = "https://www.reddit.com/search.json?q=subreddit%3Aguncontrol+self%3Ano&restrict_sr=&sort=new&t=all";
+  var redditAPI = "https://www.reddit.com/search.json?q=&subreddit=guncontrol&self=no&restrict_sr=&sort=new&t=all";
   $.getJSON( redditAPI )
     .done(function( data ) {
       $.each( data.data.children, function( i, item ) {
